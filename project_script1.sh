@@ -1,34 +1,40 @@
 #!/bin/bash
-
 # Script 1: System Identity Report
-# Author: AYUSH RANJAN | Course: Open Source Software
+# Author: AYUSH RANJAN(24BCE10685)
+# Course: Open Source Software
+# Software Choice: Git
 
 # --- Variables ---
+# Specific details for audit
 STUDENT_NAME="AYUSH RANJAN"
-SOFTWARE_CHOICE="VLC Media Player"
+SOFTWARE_CHOICE="Git"
 
-# --- System Info ---
+# --- System info ---
+# Capturing real-time system data using command substitution
 KERNEL=$(uname -r)
 USER_NAME=$(whoami)
-HOME_DIR=$HOME
 UPTIME=$(uptime -p)
-DATE_TIME=$(date)
 
-# Get distribution name
-DISTRO=$(lsb_release -d | cut -f2)
+# --- Completed TODOS ---
+# 1. Distro Name: Using the lsb_release to specifically identify Ubuntu
+DISTRO=$(lsb_release -ds)
+# 2. Date: Formatted for readability
+CURRENT_DATE=$(date "+%Y-%m-%d %H:%M:%S")
 
 # --- Display ---
-echo "======================================"
-echo " Open Source Audit — $STUDENT_NAME"
-echo "======================================"
-
-echo "Software Chosen : $SOFTWARE_CHOICE"
-echo "Distribution    : $DISTRO"
-echo "Kernel Version  : $KERNEL"
-echo "User            : $USER_NAME"
-echo "Home Directory  : $HOME_DIR"
-echo "Uptime          : $UPTIME"
-echo "Date & Time     : $DATE_TIME"
-
-echo ""
-echo "License: This system is based on open-source software under the GNU General Public License (GPL)."
+# Formatting the output for the report screenshot
+echo "=========================================="
+echo "   Open Source Audit - $STUDENT_NAME      "
+echo "=========================================="
+echo "Chosen Software  : $SOFTWARE_CHOICE"
+echo "------------------------------------------"
+echo "Operating System : $DISTRO"
+echo "Kernel Version   : $KERNEL"
+echo "Current User     : $USER_NAME"
+echo "Home Directory   : $HOME"
+echo "System Uptime    : $UPTIME"
+echo "Current Date/Time: $CURRENT_DATE"
+echo "------------------------------------------"
+# 3. License Message: Added as per requirements
+echo "Note: This OS is covered by the GNU GPL License."
+echo "=========================================="
